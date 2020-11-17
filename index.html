@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        do{ var n = parseInt(prompt("Nhập vào số cần kiểm tra"),10);}while(isNaN(n));
-       
-            var flag = true;
-            if(n<2){
+        do {
+            var n = parseInt(prompt("Nhập vào số cần kiểm tra"), 10);
+        } while (isNaN(n));
+        let flag = true;
+        function checkPrimeNumber(n) {
+            if (n < 2) {
                 flag = false;
-                console.log(n+" không là số nguyên tố")
-            }else{
+
+            } else {
                 //có thể lặp từ i=3 đến Math.square(n) với i +=2; 
-                for(let i=2;i<(n-1);i++){
-                    if(n % i== 0){
+                for (let i = 2; i < (n - 1); i++) {
+                    if (n % i == 0) {
                         flag = false;
-                        console.log(n + " không là số nguyên tố");
                         break;
                     }
 
                 }
             }
-            if(flag == true){
-                document.write(n+"  là số nguyên tố")
-            }else{
+            show();
+        }
+        checkPrimeNumber(n);
+        function show() {
+            if (flag == true) {
+                document.write(n + "  là số nguyên tố")
+            } else {
                 document.write(n + " không là số nguyên tố")
             }
-    
+        }
     </script>
 </body>
+
 </html>
