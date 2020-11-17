@@ -7,7 +7,8 @@
 </head>
 <body>
     <script>
-        let n = parseInt(prompt("Nhập vào số cần kiểm tra"),10);
+        do{ var n = parseInt(prompt("Nhập vào số cần kiểm tra"),10);}while(isNaN(n));
+       
             var flag = true;
             if(n<2){
                 flag = false;
