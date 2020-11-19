@@ -8,33 +8,60 @@
 </head>
 
 <body>
+    <label >
+    <input id="number">Nhap so nguyen to vao day
+   
+</label>
+<button onclick="checkNumber()">Check</button>
+<span id="result"></span>
     <script>
-        do {
-            var n = parseInt(prompt("Nhập vào số cần kiểm tra"), 10);
-        } while (isNaN(n));
-        let flag = true;
-        function checkPrimeNumber(n) {
+        // do {
+        //     var n = parseInt(prompt("Nhập vào số cần kiểm tra"), 10);
+        // } while (isNaN(n));
+        // let flag = true;
+        // function checkPrimeNumber(n) {
+        //     if (n < 2) {
+        //         flag = false;
+
+        //     } else {
+        //         //có thể lặp từ i=3 đến Math.square(n) với i +=2; 
+        //         for (let i = 2; i < (n - 1); i++) {
+        //             if (n % i == 0) {
+        //                 flag = false;
+        //                 break;
+        //             }
+
+        //         }
+        //     }
+        //     show();
+        // }
+        // checkPrimeNumber(n);
+        // function show() {
+        //     if (flag == true) {
+        //         document.write(n + "  là số nguyên tố")
+        //     } else {
+        //         document.write(n + " không là số nguyên tố")
+        //     }
+        // }
+        //cach 2
+        function checkPrime(n) {
             if (n < 2) {
-                flag = false;
-
-            } else {
-                //có thể lặp từ i=3 đến Math.square(n) với i +=2; 
-                for (let i = 2; i < (n - 1); i++) {
-                    if (n % i == 0) {
-                        flag = false;
-                        break;
-                    }
-
+                return false;
+            }
+            for (let i = 2; i < (n - 1); i++) {
+                if (n % i == 0) {
+                    return false;
                 }
             }
-            show();
+            return true;
         }
-        checkPrimeNumber(n);
-        function show() {
-            if (flag == true) {
-                document.write(n + "  là số nguyên tố")
-            } else {
-                document.write(n + " không là số nguyên tố")
+        function checkNumber(){
+            let number = parseInt(document.getElementById("number").value)
+            let e= document.getElementById("result")
+            if(checkPrime(number)){
+                e.innerHTML = number +"la so nguyen to"
+            }else{
+                e.innerHTML = number +" khong la so nguyen to"
             }
         }
     </script>
